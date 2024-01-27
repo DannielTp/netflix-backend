@@ -28,7 +28,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 	// POST PATCH DELETE -> ADMIN
 	// GET -> USER
 
-	next();
+	if (req.method === 'GET') next();
 });
 
 app.use('/categorias', categoriasRouter);
